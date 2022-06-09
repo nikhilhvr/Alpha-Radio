@@ -14,7 +14,19 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
    
-
+   @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: AnimatedSplashScreen(
+            duration: 3000,
+            splash: Image.asset('assets/nn.png'),
+            nextScreen: HomePage(),
+            splashTransition: SplashTransition.rotationTransition,
+            // pageTransitionType: PageTransitionType.fade,
+            backgroundColor: Color.fromARGB(255, 43, 33, 33)));
+            
+  }
 }
 
 
